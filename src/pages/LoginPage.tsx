@@ -30,9 +30,6 @@ export default function LoginPage({ onNavigate, onLogin }: LoginPageProps) {
       <div className="max-w-md w-full">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="inline-block w-16 h-16 bg-black rounded-xl flex items-center justify-center text-white text-2xl font-bold mb-4">
-            O
-          </div>
           <h1 className="titre-secondaire mb-2">Connexion</h1>
           <p className="text-secondaire">
             Connectez-vous pour accéder à vos favoris et soumettre des ressources

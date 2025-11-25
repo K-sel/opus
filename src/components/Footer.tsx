@@ -1,3 +1,5 @@
+import logoWhite from '../assets/logos/logo_white_footer.png';
+
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white mt-20">
@@ -6,10 +8,11 @@ export default function Footer() {
           {/* About */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-black font-bold">
-                O
-              </div>
-              <span className="text-xl font-bold">Opus</span>
+              <img
+                src={logoWhite}
+                alt="Opus Logo"
+                className="h-10 w-30 object-contain"
+              />
             </div>
             <p className="text-gray-400 text-sm">
               Centralisez les meilleures ressources pour le design graphique et UI/UX.

@@ -3,9 +3,6 @@ export default function AboutPage() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Hero */}
       <div className="text-center mb-16">
-        <div className="inline-block w-20 h-20 bg-black rounded-2xl flex items-center justify-center text-white text-4xl font-bold mb-6">
-          O
-        </div>
         <h1 className="titre-primaire mb-4">À propos d'Opus</h1>
         <p className="text-xl text-secondaire max-w-2xl mx-auto">
           La plateforme qui centralise les meilleures ressources pour les designers

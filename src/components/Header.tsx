@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { User } from '../types';
+import logoBlack from '../assets/logos/logo_black.png';
 
 interface HeaderProps {
   currentPage: string;
@@ -26,12 +27,14 @@ export default function Header({ currentPage, onNavigate, user, onLogout }: Head
           {/* Logo */}
           <button
             onClick={() => onNavigate('home')}
-            className="flex items-center space-x-2 text-2xl font-bold"
+            className="flex items-center space-x-2"
           >
-            <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white">
-              O
-            </div>
-            <span>Opus</span>
+            <img
+              src={logoBlack}
+              alt="Opus Logo"
+              className="h-10 w-10 object-contain"
+            />
+            <span className="text-2xl font-bold">Opus</span>
           </button>
 
           {/* Desktop Navigation */}
