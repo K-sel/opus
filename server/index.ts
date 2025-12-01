@@ -2,13 +2,21 @@ import express from 'express';
 import cors from 'cors';
 import { initializeDatabase, queries } from './database.js';
 import { seedDatabase } from './seed.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+// Serve static files from dist folder (React build)
+app.use(express.static(path.join(__dirname, '../dist')));
 
 // Initialize database
 initializeDatabase();
@@ -389,6 +397,11 @@ app.post('/api/admin/submissions/:id/reject', (req, res) => {
     console.error('Reject submission error:', error);
     res.status(500).json({ error: 'Failed to reject submission' });
   }
+});
+
+// Fallback: Serve React app for all non-API routes (SPA routing)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
 app.listen(PORT, () => {
